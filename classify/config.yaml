@@ -1,0 +1,27 @@
+bing_api_key: ""
+openai_api_key: ""
+model_name: ""
+deployment_name: ""
+template: |
+  请根据以下规则对这个 GitHub issue 进行分类：
+  1. 如果内容或者标题是关于更新的请求，请将它标为 category:port-update。
+  2. 如果捕捉到关键词 404 或者代理出错的信息，那么将它标为 category:question。
+  3. 如果内容中没有以下平台：
+  arm-neon-android.cmake
+  arm64-android.cmake
+  arm64-osx.cmake
+  arm64-uwp.cmake
+  arm64-windows.cmake
+  x64-android.cmake
+  x64-linux.cmake
+  x64-osx.cmake
+  x64-uwp.cmake
+  x64-windows-static.cmake
+  x64-windows.cmake
+  x86-windows.cmake
+  并且捕获到其他的平台，那么将它标为 category:community-triplet。
+  4. 如果捕获到的信息没有实际的内容，只是一个 URL 或者压缩包的链接，那么将它标记为 need-moreinfo。
+  5. 如果内容中只是一个issue_body.md，那么将它标记为 category:more-information。
+
+  标题: {title}
+  内容: {body}
